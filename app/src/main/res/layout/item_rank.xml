@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:id="@+id/cv_item_rank"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="4dp"
+    app:cardMaxElevation="4dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:id="@+id/layout_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_item_rank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:textSize="24sp"
+            android:textColor="@color/number_rank"
+            android:text="@string/value_rank"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_item_faculty_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="64dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/faculty_rank"
+            android:text="@string/faculty"/>
+
+        <ImageView
+            android:id="@+id/iv_star_rank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/tv_item_faculty_name"
+            android:background="@drawable/ic_star_24dp"
+            android:backgroundTint="@color/white"
+            android:layout_marginStart="16dp"
+            android:visibility="gone"
+            android:layout_marginTop="20dp"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_item_faculty_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="32dp"
+            android:textSize="24sp"
+            android:textColor="@color/score_rank"
+            android:text="@string/score"/>
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>
