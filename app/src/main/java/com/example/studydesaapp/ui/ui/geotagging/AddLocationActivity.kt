@@ -30,9 +30,11 @@ import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.*
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import java.io.ByteArrayOutputStream
+import java.text.DateFormat
 import java.util.*
 
 
@@ -137,11 +139,20 @@ class AddLocationActivity : AppCompatActivity(), OnMapReadyCallback {
             } else if (addLocationBinding.txtRole.text.toString() == "") {
                 addLocationBinding.txtRole.error = "Harap isi bidang yang dibutuhkan"
                 addLocationBinding.txtRole.requestFocus()
-            } else if (addLocationBinding.txtInfo.text.toString() == "") {
-                addLocationBinding.txtInfo.error = "Harap isi informasi tambahan"
-                addLocationBinding.txtInfo.requestFocus()
+            } else if (addLocationBinding.txtProblem.text.toString() == "") {
+                addLocationBinding.txtProblem.error = "Harap isi permasalahan desa"
+                addLocationBinding.txtProblem.requestFocus()
+            } else if (addLocationBinding.txtSector.text.toString() == "") {
+                addLocationBinding.txtSector.error = "Harap isi sektor pengembangan desa"
+                addLocationBinding.txtSector.requestFocus()
+            } else if (addLocationBinding.txtWorkActivities.text.toString() == "") {
+                addLocationBinding.txtWorkActivities.error = "Harap isi program kerja desa"
+                addLocationBinding.txtWorkActivities.requestFocus()
+            } else if (addLocationBinding.txtTouristSite.text.toString() == "") {
+                addLocationBinding.txtTouristSite.error = "Harap isi nama tempat wisata"
+                addLocationBinding.txtTouristSite.requestFocus()
             } else if (fileImageUpload == null) {
-                addLocationBinding.btnCaptureImage.error = "Harap tambah foto"
+                addLocationBinding.btnCaptureImage.error = "Harap sisipkan foto balai desa"
             } else {
                 villageImageRef.putBytes(fileImageUpload!!).addOnSuccessListener {
                     villageImageRef.downloadUrl.addOnSuccessListener {
@@ -167,12 +178,19 @@ class AddLocationActivity : AppCompatActivity(), OnMapReadyCallback {
         addLocationBinding: ActivityAddLocationBinding,
         photoUrl: String
     ) {
+        val date = Calendar.getInstance().time
+        val currentDateAndTime: String = DateFormat.getDateInstance(DateFormat.FULL).format(date)
         val location = LocationEntity(
             addLocationBinding.txtVillage.text.toString(),
+            currentNameFaculty,
             addLocationBinding.txtRole.text.toString(),
-            addLocationBinding.txtInfo.text.toString(),
-            if(changedLatitude == 0.0) latitude.toString() else changedLatitude.toString() ,
-            if(changedLongitude == 0.0) longitude.toString() else changedLongitude.toString(),
+            addLocationBinding.txtProblem.text.toString(),
+            addLocationBinding.txtSector.text.toString(),
+            addLocationBinding.txtWorkActivities.text.toString(),
+            addLocationBinding.txtTouristSite.text.toString(),
+            if (changedLatitude == 0.0) latitude.toString() else changedLatitude.toString(),
+            if (changedLongitude == 0.0) longitude.toString() else changedLongitude.toString(),
+            currentDateAndTime,
             auth.currentUser?.phoneNumber!!,
             photoUrl
         )

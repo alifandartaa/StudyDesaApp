@@ -26,8 +26,9 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_faculty"
+        android:id="@+id/til_faculty_test"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,13 +37,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txt_faculty"
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/txt_faculty_complete"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:backgroundTint="@color/white"
-            android:textAllCaps="true"
-            android:hint="@string/faculty" />
+            android:layout_height="50dp"
+            android:hint="   Nama singkatan Fakultas ex : FK,FH,FEB"
+            android:textSize="18sp" />
+
 
     </com.google.android.material.textfield.TextInputLayout>
 

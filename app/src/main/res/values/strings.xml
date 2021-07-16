@@ -23,14 +23,14 @@
     <string name="village_name">Nama Desa ex: Desa Mangunharjo</string>
     <string name="desc_role">Bidang yang dibutuhkan ex: Akuntan</string>
     <string name="add_info">Informasi tambahan ex: cuaca, proker, umkm dll.</string>
-    <string name="pick_location">Ambil Lokasi</string>
+    <string name="pick_location">Tentukan titik lokasi balai desa</string>
     <string name="title_activity_maps">Map</string>
     <string name="maps_api_key">AIzaSyDaj34cJwbHTsTrbcpW3J_bklQhvc2idUw</string>
-    <string name="take_pict">Ambil Gambar</string>
+    <string name="take_pict">Ambil foto balai desa</string>
     <string name="btn_add">Tambahkan</string>
     <string name="img_location">Gambar Lokasi</string>
     <string name="log_out">log out</string>
-    <string name="change_location">ubah lokasi</string>
+    <string name="change_location">Tentukan lokasi</string>
     <string name="title">title</string>
     <string name="leaderboard">leaderboard</string>
     <string name="village_detail_name">Nama Desa</string>
@@ -40,7 +40,7 @@
     <string name="value_detail_info">value detail info</string>
     <string name="value_rank">1</string>
     <string name="score">Score</string>
-    <string name="text_leaderboard">Tingkatkan peringkat fakultasmu dengan lebih banyak menambahkan lokasi KKN !</string>
+    <string name="text_leaderboard">Tingkatkan peringkat fakultasmu dengan lebih banyak menambahkan lokasi KKN ! (Info : 1 geotaging lokasi desa = +10 poin)</string>
     <string name="value_name_profile">Value name profile</string>
     <string name="value_faculty_name">Value Faculty Name</string>
     <string name="msg_change_location">Apa anda yakin dengan lokasi yang ditentukan sudah benar?</string>
@@ -48,4 +48,26 @@
     <string name="accept">Ya</string>
     <string name="msg_add_location">Apa data yang dimasukkan telah benar?</string>
     <string name="txt_estimation_distance">Estimasi jarak dari UB ke Lokasi</string>
+    <string name="value_date">value date</string>
+    <string name="date_add">Tanggal ditambahkan</string>
+    <string name="add_problem">Permasalahan Desa</string>
+    <string name="add_sector">Sektor Pengembangan Desa</string>
+    <string name="add_work_activities">Program Kerja Desa</string>
+    <string name="add_tourist_site">Nama Tempat Wisata Dekat Desa</string>
+    <string name="value_problem">value problem</string>
+    <string name="value_sector">value sector</string>
+    <string name="value_work_activities">value work activities</string>
+    <string-array name="faculties">
+        <item>FEB</item>
+        <item>FH</item>
+        <item>FIA</item>
+        <item>FIB</item>
+        <item>FILKOM</item>
+        <item>FK</item>
+        <item>FKG</item>
+        <item>FMIPA</item>
+        <item>FP</item>
+        <item>FT</item>
+        <item>FTP</item>
+    </string-array>
 </resources>

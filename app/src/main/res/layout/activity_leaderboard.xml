@@ -41,7 +41,7 @@
 
         <ImageView
             android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_height="100dp"
             android:background="@drawable/ic_leaderboard_black_24dp"
             android:backgroundTint="@color/white"
             android:layout_alignParentEnd="true"

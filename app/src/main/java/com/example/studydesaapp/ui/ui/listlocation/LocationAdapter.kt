@@ -27,6 +27,7 @@ class LocationAdapter : RecyclerView.Adapter<LocationAdapter.LocationViewHolder>
         fun bind(location: LocationEntity) {
             with(binding){
                 tvItemTitle.text = location.name
+                tvFacultyName.text = location.faculty
                 Glide.with(itemView.context)
                     .load(location.photo)
                     .into(imgPoster)

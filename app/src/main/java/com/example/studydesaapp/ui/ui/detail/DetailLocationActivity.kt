@@ -2,15 +2,11 @@ package com.example.studydesaapp.ui.ui.detail
 
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Color
 import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import com.bumptech.glide.Glide
 import com.example.studydesaapp.R
 import com.example.studydesaapp.databinding.ActivityDetailLocationBinding
 import com.example.studydesaapp.ui.entity.LocationEntity
@@ -19,9 +15,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.math.RoundingMode
-import kotlin.collections.ArrayList
 
 class DetailLocationActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -93,7 +87,12 @@ class DetailLocationActivity : AppCompatActivity(), OnMapReadyCallback {
 
             detailLocationBinding.tvValueDetailName.text = detailLocation.name
             detailLocationBinding.tvValueDetailRole.text = detailLocation.descrole
-            detailLocationBinding.tvValueDetailInfo.text = detailLocation.info_location
+            detailLocationBinding.tvValueProblem.text = detailLocation.problem
+            detailLocationBinding.tvValueSector.text = detailLocation.sector
+            detailLocationBinding.tvValueWorkActivities.text = detailLocation.work_activities
+            detailLocationBinding.tvValueTourist.text = detailLocation.tourist_site
+            detailLocationBinding.tvValueDateAdd.text = detailLocation.currentdate
+            detailLocationBinding.tvValueContact.text = detailLocation.phone
 
         }
     }

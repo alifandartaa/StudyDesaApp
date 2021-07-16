@@ -1,8 +1,10 @@
 package com.example.studydesaapp.ui.ui.loginregister
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.studydesaapp.R
 import com.example.studydesaapp.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -23,8 +25,16 @@ class RegisterActivity : AppCompatActivity() {
 
         supportActionBar?.title = "Pendaftaran Akun"
         val phoneNumber = intent.getStringExtra("EXTRA_PHONE")
+
+        val faculties = resources.getStringArray(R.array.faculties)
+        val facultyArrayAdapter =
+            ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, faculties)
+        activityRegisterBinding.txtFacultyComplete.setAdapter(facultyArrayAdapter)
+
         fullname = activityRegisterBinding.txtFullName.text.toString()
-        faculty = activityRegisterBinding.txtFaculty.text.toString()
+//        faculty = activityRegisterBinding.txtFaculty.text.toString()
+        faculty = activityRegisterBinding.txtFacultyComplete.text.toString()
+
 
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
@@ -38,12 +48,11 @@ class RegisterActivity : AppCompatActivity() {
         phoneNumber: String?
     ) {
         activityRegisterBinding.btnSubmitRegister.setOnClickListener {
-            val currentUser = auth.currentUser
             val currentUserDb = databaseReference?.child(phoneNumber!!)
             currentUserDb!!.child("name")
                 .setValue(activityRegisterBinding.txtFullName.text.toString())
             currentUserDb.child("faculty")
-                .setValue(activityRegisterBinding.txtFaculty.text.toString())
+                .setValue(activityRegisterBinding.txtFacultyComplete.text.toString())
             currentUserDb.child("phone").setValue(phoneNumber)
             Toast.makeText(this@RegisterActivity, "Registration Success", Toast.LENGTH_LONG).show()
             finish()
